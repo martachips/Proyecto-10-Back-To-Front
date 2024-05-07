@@ -1,0 +1,13 @@
+.header {
+  background-color: aquamarine;
+  height: 100px;
+}
+
+.navBar {
+  background-color: blue;
+  width: 400px;
+}
+
+.navBar a {
+  color: black;
+}

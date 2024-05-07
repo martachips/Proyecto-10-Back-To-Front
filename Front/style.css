@@ -1,0 +1,64 @@
+:root {
+  --rtc-font-family: 'Tilt Prism', sans-serif;
+  --rtc-font-family-2: 'Source Code Pro', monospace;
+
+  --rtc-background-color: #383b53;
+  --rtc-color-1: #ddf0ff;
+  --rtc-color-2: #9c0d38;
+  --rtc-color-3: #ce5374;
+  --rtc-color-4: #d4d6b9;
+  --rtc-color-5: #bfc1a6;
+  --rtc-color-5-wrong: #e68484;
+  --rtc-color-6-right: #8cc78c;
+
+  --rtc-background-color2: #1b4965;
+  --rtc-color-7: #bee9e8;
+  --rtc-color-8: #62b6cb;
+  --rtc-color-9: #cae9ff;
+  --rtc-color-10: #5fa8d3;
+
+  /*SPACING: MARGIN, PADDING, */
+  --rtc-margin-xs: 5px;
+  --rtc-margin-s: 10px;
+  --rtc-margin-m: 15px;
+  --rtc-margin-l: 20px;
+  --rtc-margin-xl: 30px;
+  --rtc-margin-xxl: 40px;
+  --rtc-margin-xxxl: 60px;
+
+  --rtc-padding-xs: 5px;
+  --rtc-padding-s: 10px;
+  --rtc-padding-m: 15px;
+  --rtc-padding-l: 20px;
+  --rtc-padding-xl: 30px;
+
+  --rtc-gap-s: 10px;
+  --rtc-gap-m: 20px;
+
+  --rtc-border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  min-width: 0;
+  list-style: none;
+}
+
+body {
+  height: 100svh;
+  background-color: var(--rtc-color-1);
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  height: 85svh;
+}
+
+h1 {
+  width: 400px;
+  text-align: center;
+  margin: auto;
+}
