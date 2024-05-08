@@ -23,6 +23,6 @@ userRoutes.post(
   isAuth,
   confirmAssistance
 );
-userRoutes.delete('/:id', isAdmin, deleteUser);
+userRoutes.delete('/delete/:id', isAdmin, deleteUser);
 
 module.exports = userRoutes;

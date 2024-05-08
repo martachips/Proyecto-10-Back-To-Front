@@ -1,13 +1,29 @@
 .header {
   background-color: aquamarine;
   height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .navBar {
-  background-color: blue;
-  width: 400px;
+  width: 50svw;
+  height: 68px;
+  border: 1px grey solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: var(--rtc-margin-s);
 }
 
 .navBar a {
   color: black;
+}
+
+.logo {
+  width: 250px;
+  font-size: 4em;
+  margin-left: var(--rtc-margin-xxxl);
+  font-family: var(--rtc-font-family-logo);
 }

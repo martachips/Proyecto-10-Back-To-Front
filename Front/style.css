@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap');
+
 :root {
-  --rtc-font-family: 'Tilt Prism', sans-serif;
+  --rtc-font-family-logo: 'Jersey 10 Charted', sans-serif;
   --rtc-font-family-2: 'Source Code Pro', monospace;
 
   --rtc-background-color: #383b53;
-  --rtc-color-1: #ddf0ff;
+  --rtc-color-1: #dee9f2;
   --rtc-color-2: #9c0d38;
   --rtc-color-3: #ce5374;
   --rtc-color-4: #d4d6b9;
@@ -45,6 +47,7 @@
   box-sizing: border-box;
   min-width: 0;
   list-style: none;
+  text-decoration: none;
 }
 
 body {

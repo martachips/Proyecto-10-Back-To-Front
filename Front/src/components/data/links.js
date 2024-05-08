@@ -1,5 +1,8 @@
+import { createEvent } from '../../pages/createEvent/createEvent';
+import { printEvents } from '../../pages/events/events';
 import { home } from '../../pages/home/home';
 import { loginRegister } from '../../pages/logIn-register/loginRegister';
+import { showProfile } from '../../pages/profile/profile';
 
 export const routes = [
   {
@@ -7,19 +10,19 @@ export const routes = [
     page: home
   },
   {
-    text: 'LogIn / Register',
-    page: loginRegister
+    text: 'Events',
+    page: printEvents
+  },
+  {
+    text: 'MyProfile',
+    page: showProfile
   },
   {
     text: 'Create Event',
-    page: '#'
+    page: createEvent
   },
   {
-    text: 'Events',
-    page: '#'
-  },
-  {
-    text: 'Profile',
-    page: '#'
+    text: 'LogIn / Register',
+    page: loginRegister
   }
 ];

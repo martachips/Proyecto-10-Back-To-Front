@@ -12,30 +12,32 @@ ATTENDANTS
 · Sólo podrán ver los eventos y el número total de asistentes y confirmar su asistencia
 · Pero no podrán crear ni modificar eventos
 
+ORIGEN: http://localhost:3000/api/v1
+
 ENDPOINTS
 
 Attendants:
 
-- getAttendantsById - /attendants/:id
-- getattendants - /attendants/
-- confirmAssistance - /event/:eventId/attendance/confirm
+- GET - getAttendantsById - /attendants/:id
+- GET - getattendants - /attendants/
+- POST - confirmAssistance - /event/:eventId/attendance/confirm
 
 Events:
 
-- getEventById - /event/:id
-- getEventByCategory - /event/category/:category
-- getEvents - /event/
-- createEvent - /event/createEvent
-- validateEvent - /event/validate/:id
-- updateEvent - /event/update/:id
-- deleteEvent - /event/:id
+- GET - getEventById - /event/:id
+- GET - getEventByCategory - /event/category/:category
+- GET - getEvents - /event/
+- POST - createEvent - /event/createEvent - isAuth - uploadImg("events")
+- PUT - validateEvent - /event/validate/:id - isAdmin
+- PUT - updateEvent - /event/update/:id - isAuth - uploadImg("events")
+- DELETE - deleteEvent - /event/:id - isAdmin
 
 Users:
 
-- getUsers - /user/
-- getUserById - /user/:id
-- register - /user/register
-- login - /user/login
-- updateUser - /user/:id
-- confirmAssistance - /user/event/:eventId/attendance/confirm
-- deleteUser - /user/:id
+- GET - getUsers - /user/ - isAuth
+- GET - getUserById - /user/:id - isAuth
+- POST - register - /user/register
+- POST - login - /user/login
+- PUT - updateUser - /user/:id - isAuth - uploadImg("users")
+- POST - confirmAssistance - /user/events/:eventId/attendance/confirm - isAuth
+- DELETE - deleteUser - /user/delete/:id - isAdmin

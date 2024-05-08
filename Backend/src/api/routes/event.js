@@ -18,13 +18,14 @@ eventsRoutes.get('/category/:category', getEventByCategory);
 eventsRoutes.get('/', getEvents);
 eventsRoutes.post(
   '/createEvent',
-  uploadImg('events').single('image'),
   isAuth,
+  uploadImg('events').single('image'),
   createEvent
 );
 eventsRoutes.put('/validate/:id', isAdmin, validateEvent);
 eventsRoutes.put(
   '/update/:id',
+  isAuth,
   uploadImg('events').single('image'),
   updateEvent
 );

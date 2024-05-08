@@ -6,3 +6,5 @@ import { home } from './src/pages/home/home';
 header();
 // home();
 // loginRegister();
+
+//http://localhost:3000/api/v1
