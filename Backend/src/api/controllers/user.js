@@ -101,7 +101,10 @@ const updateUser = async (req, res, next) => {
       updatedFields.password = newPassword;
     }
     if (req.file) {
-      if (oldUser.imgProfile) {
+      if (
+        oldUser.imgProfile !==
+        'https://res.cloudinary.com/dg1hbudfu/image/upload/v1715254691/Users/user-square-svgrepo-com_vogrix.svg'
+      ) {
         deleteFile(oldUser.imgProfile);
       }
       updatedFields.imgProfile = req.file.path;

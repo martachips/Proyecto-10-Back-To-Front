@@ -26,7 +26,7 @@ eventsRoutes.put('/validate/:id', isAdmin, validateEvent);
 eventsRoutes.put(
   '/update/:id',
   isAuth,
-  uploadImg('events').single('image'),
+  uploadImg('events').single('img'),
   updateEvent
 );
 eventsRoutes.delete('/:eventId/delete', isAdmin, deleteEvent);

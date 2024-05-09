@@ -17,7 +17,12 @@ userRoutes.get('/', isAuth, getUsers);
 userRoutes.get('/:id', isAuth, getUserById);
 userRoutes.post('/register', register);
 userRoutes.post('/login', logIn);
-userRoutes.put('/:id', isAuth, uploadImg('users').single('image'), updateUser);
+userRoutes.put(
+  '/update/:id',
+  isAuth,
+  uploadImg('users').single('imgProfile'),
+  updateUser
+);
 userRoutes.post(
   '/events/:eventId/attendance/confirm',
   isAuth,

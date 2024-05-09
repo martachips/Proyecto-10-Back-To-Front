@@ -107,7 +107,10 @@ const updateEvent = async (req, res, next) => {
     }
 
     if (req.file) {
-      if (oldEvent.img) {
+      if (
+        oldEvent.img !=
+        'https://res.cloudinary.com/dg1hbudfu/image/upload/v1713774429/Events/calendar-event-svgrepo-com_ibkqsh.svg'
+      ) {
         deleteFile(oldEvent.img);
       }
       oldEvent.img = req.file.path;
@@ -123,8 +126,8 @@ const updateEvent = async (req, res, next) => {
 
 const deleteEvent = async (req, res, next) => {
   try {
-    const { id } = req.params;
-    const deletedEvent = await Event.findByIdAndDelete(id);
+    const { eventId } = req.params;
+    const deletedEvent = await Event.findByIdAndDelete(eventId);
 
     if (
       deletedEvent.img !==
