@@ -1,23 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --rtc-font-family-logo: 'Jersey 10 Charted', sans-serif;
-  --rtc-font-family-2: 'Source Code Pro', monospace;
+  --rtc-font-family-2: 'Montserrat', sans-serif;
 
-  --rtc-background-color: #383b53;
-  --rtc-color-1: #dee9f2;
-  --rtc-color-2: #9c0d38;
-  --rtc-color-3: #ce5374;
-  --rtc-color-4: #d4d6b9;
-  --rtc-color-5: #bfc1a6;
-  --rtc-color-5-wrong: #e68484;
-  --rtc-color-6-right: #8cc78c;
+  --rtc-background-image: linear-gradient(
+    to right,
+    #f4f1bb,
+    #f1d493,
+    #f1b474,
+    #f09160,
+    #ed6a5a
+  );
+  --rtc-color-1: #e6ebe0;
+  --rtc-color-2: #5ca4a9;
+  --rtc-color-3: #9bc1bc;
+  --rtc-color-4: #f4f1bb;
+  --rtc-color-5: #ed6a5a;
 
-  --rtc-background-color2: #1b4965;
-  --rtc-color-7: #bee9e8;
-  --rtc-color-8: #62b6cb;
-  --rtc-color-9: #cae9ff;
-  --rtc-color-10: #5fa8d3;
+  --rtc-color-wrong: #e68484;
+  --rtc-color-right: #8cc78c;
 
   /*SPACING: MARGIN, PADDING, */
   --rtc-margin-xs: 5px;
@@ -53,7 +56,10 @@
 body {
   height: 100svh;
   background-color: var(--rtc-color-1);
+  font-family: var(--rtc-font-family-2);
+  position: relative;
 }
+
 #main {
   display: flex;
   flex-direction: column;

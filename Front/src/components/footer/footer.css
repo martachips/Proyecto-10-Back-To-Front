@@ -1,0 +1,19 @@
+.footer-p {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: linear-gradient(
+    to left,
+    #f4f1bb,
+    #f1d493,
+    #f1b474,
+    #f09160,
+    #ed6a5a
+  );
+  bottom: 0;
+  height: 5%;
+  text-align: center;
+  font-size: 0.85em;
+}

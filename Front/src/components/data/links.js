@@ -1,8 +1,9 @@
 import { createEvent } from '../../pages/createEvent/createEvent';
 import { printEvents } from '../../pages/events/events';
 import { home } from '../../pages/home/home';
-import { loginRegister } from '../../pages/logIn-register/loginRegister';
+import { login } from '../../pages/logIn/login';
 import { showProfile } from '../../pages/profile/profile';
+import { register } from '../../pages/register/register';
 
 export const routes = [
   {
@@ -22,7 +23,11 @@ export const routes = [
     page: createEvent
   },
   {
-    text: 'LogIn / Register',
-    page: loginRegister
+    text: 'Register',
+    page: register
+  },
+  {
+    text: 'LogIn',
+    page: login
   }
 ];

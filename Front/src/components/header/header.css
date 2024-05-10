@@ -1,5 +1,5 @@
 .header {
-  background-color: aquamarine;
+  background-image: var(--rtc-background-image);
   height: 100px;
   display: flex;
   justify-content: flex-end;
@@ -9,7 +9,6 @@
 .navBar {
   width: 50svw;
   height: 68px;
-  border: 1px grey solid;
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
@@ -17,12 +16,12 @@
   margin-right: var(--rtc-margin-s);
 }
 
-.navBar a {
+.navBar .nav-link {
   color: black;
 }
 
 .logo {
-  width: 250px;
+  width: 300px;
   font-size: 4em;
   margin-left: var(--rtc-margin-xxxl);
   font-family: var(--rtc-font-family-logo);

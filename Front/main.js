@@ -1,10 +1,7 @@
 import './style.css';
 import { header } from './src/components/header/header';
-import { loginRegister } from './src/pages/logIn-register/loginRegister';
-import { home } from './src/pages/home/home';
+import { footer } from './src/components/footer/footer';
 
 header();
-// home();
-// loginRegister();
 
-//http://localhost:3000/api/v1
+footer();

@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Event = require('../api/models/event');
 const User = require('../api/models/user');
-// const Attendant = require('../api/models/attendant');
 const festivals = require('./event.seed');
 const registeredUsers = require('./user.seed');
 
