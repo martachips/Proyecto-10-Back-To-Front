@@ -27,7 +27,7 @@ const confirmAssistance = async (req, res, next) => {
   try {
     const { name, email } = req.body;
     const { eventId } = req.params;
-    console.log(eventId);
+
     const existingAttendant = await Attendant.findOne({
       email,
       confirmedEvents: eventId
@@ -39,50 +39,65 @@ const confirmAssistance = async (req, res, next) => {
         .json({ message: 'This user is already confirmed in this event' });
     }
 
-    let newAttendant;
-
     try {
       if (req.user) {
-        newAttendant = new Attendant({
-          name: req.user.name,
-          email: req.user.email,
-          confirmedEvents: eventId
-        });
+        const user = await User.findById(req.user._id);
+        if (!user) {
+          return res.status(404).json({ message: 'User not found' });
+        }
 
-        await newAttendant.save();
+        let attendant = await Attendant.findOne({ email: req.user.email });
 
-        await User.findByIdAndUpdate(
-          req.user._id,
+        if (!attendant) {
+          attendant = new Attendant({
+            name: req.user.name,
+            email: req.user.email,
+            confirmedEvents: [eventId]
+          });
+        } else {
+          attendant.confirmedEvents.addToSet(eventId);
+        }
+
+        await attendant.save();
+
+        user.eventsToAttend.addToSet(eventId);
+        await user.save();
+
+        await Event.findByIdAndUpdate(
+          eventId,
           {
-            $addToSet: { eventsToAttend: eventId }
+            $addToSet: { confirmedAttendants: attendant._id }
           },
           { new: true }
         );
+
+        console.log(`Updated user: ${user._id} with event: ${eventId}`);
+        console.log('User eventsToAttend:', user.eventsToAttend);
+
+        return res
+          .status(200)
+          .json({ message: `Assistance confirmed succesfully`, attendant });
       } else {
-        newAttendant = new Attendant({
+        const newAttendant = new Attendant({
           name,
           email,
-          confirmedEvents: eventId
+          confirmedEvents: [eventId]
         });
         await newAttendant.save();
-      }
+        await Event.findByIdAndUpdate(
+          eventId,
+          { $addToSet: { confirmedAttendants: newAttendant._id } },
+          { new: true }
+        );
 
-      const event = await Event.findByIdAndUpdate(
-        eventId,
-        {
-          $addToSet: { confirmedAttendants: newAttendant._id }
-        },
-        { new: true }
-      );
-      console.log(eventId);
+        return res
+          .status(200)
+          .json({ message: 'Assistance confirmed successfully', newAttendant });
+      }
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: 'Error confirming attendance' });
     }
-
-    return res
-      .status(200)
-      .json({ message: `Assistance confirmed succesfully`, newAttendant });
   } catch (error) {
     console.log(error);
     return res.status(400).json('Error confirming attendance', error);

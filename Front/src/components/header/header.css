@@ -17,7 +17,7 @@
 }
 
 .navBar .nav-link {
-  color: black;
+  cursor: pointer;
 }
 
 .logo {

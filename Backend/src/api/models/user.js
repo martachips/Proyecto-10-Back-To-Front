@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
     imgProfile: {
       type: String,
       default:
-        'https://res.cloudinary.com/dg1hbudfu/image/upload/v1713862338/Users/user-square-svgrepo-com_yn444m.svg'
+        'https://res.cloudinary.com/dg1hbudfu/image/upload/v1715254691/Users/user-square-svgrepo-com_vogrix.svg'
     },
     role: { type: String, default: 'user', enum: ['admin', 'user'] },
     eventsToAttend: [{ type: mongoose.Types.ObjectId, ref: 'events' }],

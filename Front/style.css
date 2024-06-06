@@ -40,7 +40,7 @@
   --rtc-gap-s: 10px;
   --rtc-gap-m: 20px;
 
-  --rtc-border-radius: 8px;
+  --rtc-border-radius: 10px;
 }
 
 * {
@@ -54,8 +54,8 @@
 }
 
 body {
-  height: 100svh;
-  background-color: var(--rtc-color-1);
+  min-height: 100svh;
+  background-color: var(--rtc-color-4);
   font-family: var(--rtc-font-family-2);
   position: relative;
 }
@@ -63,11 +63,34 @@ body {
 #main {
   display: flex;
   flex-direction: column;
-  height: 85svh;
+  min-height: 87svh;
+  position: relative;
 }
 
 h1 {
   width: 400px;
   text-align: center;
   margin: auto;
+}
+
+a {
+  color: black;
+}
+
+input:focus {
+  outline: none;
+}
+
+.success-message {
+  padding: var(--rtc-padding-s);
+  margin: var(--rtc-margin-m);
+  background-color: var(--rtc-color-right);
+  text-align: center;
+}
+
+.error-message {
+  padding: var(--rtc-padding-s);
+  margin: var(--rtc-margin-m);
+  background-color: var(--rtc-color-wrong);
+  text-align: center;
 }

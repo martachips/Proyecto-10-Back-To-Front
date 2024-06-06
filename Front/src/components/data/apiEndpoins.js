@@ -17,8 +17,8 @@ export const eventEndpoints = {
   getEventByCategoryRoute: (category) =>
     `${BASE_URL}/event/category/${category}`,
   createEventRoute: `${BASE_URL}/event/createEvent`,
-  validateEventRoute: (id) => `${BASE_URL}/event/validate/${id}`,
-  updateEventRoute: (id) => `${BASE_URL}/event/update/${id}`,
+  validateEventRoute: (eventId) => `${BASE_URL}/event/validate/${eventId}`,
+  updateEventRoute: (eventId) => `${BASE_URL}/event/update/${eventId}`,
   deleteEventRoute: (eventId) => `${BASE_URL}/event/${eventId}/delete`
 };
 

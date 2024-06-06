@@ -25,7 +25,7 @@ eventsRoutes.post(
 eventsRoutes.put('/validate/:id', isAdmin, validateEvent);
 eventsRoutes.put(
   '/update/:id',
-  isAuth,
+  isAdmin,
   uploadImg('events').single('img'),
   updateEvent
 );

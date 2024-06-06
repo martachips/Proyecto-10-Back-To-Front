@@ -1,9 +1,15 @@
+.footer {
+  margin-top: var(--rtc-margin-xl);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+}
+
 .footer-p {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   background-image: linear-gradient(
     to left,
     #f4f1bb,
@@ -12,8 +18,7 @@
     #f09160,
     #ed6a5a
   );
-  bottom: 0;
-  height: 5%;
+  height: 35px;
   text-align: center;
   font-size: 0.85em;
 }

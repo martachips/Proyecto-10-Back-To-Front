@@ -1,7 +1,9 @@
+import { User } from '../../components/user/user';
 import './profile.css';
 
+const main = document.querySelector('#main');
 export const showProfile = () => {
-  const main = document.querySelector('#main');
+  main.innerHTML = '';
 
-  main.innerHTML = '<h1>PROFILE</h1>';
+  User();
 };

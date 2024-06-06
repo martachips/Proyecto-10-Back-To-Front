@@ -6,7 +6,8 @@ const festivals = [
     description:
       'El Primavera Sound es un festival de música que se celebra anualmente en Barcelona, España. Ofrece una amplia gama de estilos musicales, desde rock y pop hasta electrónica y hip hop.',
     category: 'Mix',
-    link: 'https://www.primaverasound.com/'
+    link: 'https://www.primaverasound.com/',
+    validated: true
   },
   {
     title: 'Sonar',
@@ -15,7 +16,8 @@ const festivals = [
     description:
       'El Sonar es un festival de música electrónica y multimedia que se celebra en Barcelona desde 1994. Es conocido por su innovación y experimentación en música electrónica, arte y tecnología.',
     category: 'Electronic',
-    link: 'https://sonar.es/'
+    link: 'https://sonar.es/',
+    validated: true
   },
   {
     title: 'Mad Cool',
@@ -24,7 +26,8 @@ const festivals = [
     description:
       'El Mad Cool es un festival de música que se celebra en Madrid, España. Atrae a una variedad de artistas y bandas internacionales de diversos géneros, incluyendo rock, pop, indie, electrónica y más.',
     category: 'Mix',
-    link: 'https://madcoolfestival.es/'
+    link: 'https://madcoolfestival.es/',
+    validated: true
   },
   {
     title: 'Bilbao BBK Live',
@@ -33,7 +36,8 @@ const festivals = [
     description:
       'El Bilbao BBK Live es un festival de música que se celebra en la ciudad de Bilbao, en el norte de España. Presenta una variedad de artistas de música rock, indie, pop y electrónica en un entorno espectacular.',
     category: 'Mix',
-    link: 'https://bilbaobbklive.com/'
+    link: 'https://bilbaobbklive.com/',
+    validated: true
   },
   {
     title: 'FIB - Festival Internacional de Benicàssim',
@@ -42,7 +46,8 @@ const festivals = [
     description:
       'El FIB es un festival de música que se celebra anualmente en la ciudad costera de Benicàssim, en la Comunidad Valenciana, España. Ofrece una variedad de géneros musicales, incluyendo rock, indie, electrónica y más.',
     category: 'Mix',
-    link: 'https://fiberfib.com/'
+    link: 'https://fiberfib.com/',
+    validated: true
   },
   {
     title: 'Cruïlla',
@@ -51,7 +56,8 @@ const festivals = [
     description:
       'El Cruïlla es un festival de música que se celebra en Barcelona, España. Presenta una variedad de estilos musicales, incluyendo rock, pop, hip hop, reggae, electrónica y más.',
     category: 'Rock',
-    link: 'https://www.cruillabarcelona.com/'
+    link: 'https://www.cruillabarcelona.com/',
+    validated: true
   },
   {
     title: 'Arenal Sound',
@@ -60,7 +66,8 @@ const festivals = [
     description:
       'El Arenal Sound es un festival de música que se celebra en la localidad de Burriana, en la provincia de Castellón, España. Ofrece una amplia variedad de géneros musicales y atrae a artistas nacionales e internacionales.',
     category: 'Mix',
-    link: 'https://www.arenalsound.com/'
+    link: 'https://www.arenalsound.com/',
+    validated: true
   },
   {
     title: 'Low Festival',

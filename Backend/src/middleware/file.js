@@ -23,7 +23,7 @@ const uploadImg = (imageType) => {
         allowedFormats: ['jpg', 'png', 'jpeg', 'gif']
       }
     });
-    return multer({ storage: storage });
+    return multer({ storage: storage, limits: { fileSize: 50 * 1024 * 1024 } });
   } catch (error) {
     console.error('Error during image upload configuration', error);
     throw error;

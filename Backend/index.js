@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
 const { connectDB } = require('./src/config/db');
 const mainRoutes = require('./src/api/routes/mainRoutes');
 const cloudinary = require('cloudinary').v2;
@@ -17,6 +18,9 @@ app.use(cors());
 connectDB();
 
 app.use(express.json());
+
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 app.use('/api/v1', mainRoutes);
 

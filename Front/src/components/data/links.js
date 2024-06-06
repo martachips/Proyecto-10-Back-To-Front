@@ -1,5 +1,5 @@
 import { createEvent } from '../../pages/createEvent/createEvent';
-import { printEvents } from '../../pages/events/events';
+import { eventPage } from '../../pages/events/events';
 import { home } from '../../pages/home/home';
 import { login } from '../../pages/logIn/login';
 import { showProfile } from '../../pages/profile/profile';
@@ -12,7 +12,7 @@ export const routes = [
   },
   {
     text: 'Events',
-    page: printEvents
+    page: eventPage
   },
   {
     text: 'MyProfile',

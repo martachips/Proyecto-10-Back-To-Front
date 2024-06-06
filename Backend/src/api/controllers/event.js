@@ -1,5 +1,4 @@
 const { deleteFile } = require('../../utils/deleteIMG');
-const Attendant = require('../models/attendant');
 const Event = require('../models/event');
 const User = require('../models/user');
 
@@ -16,17 +15,18 @@ const getEvents = async (req, res, next) => {
 };
 
 const getEventById = async (req, res, next) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     const event = await Event.findById(id).populate([
       { path: 'confirmedAttendants' },
       { path: 'createdBy' }
     ]);
     return res.status(200).json(event);
   } catch (error) {
+    console.error(`Error showing the event with ID: ${id}`, error);
     return res
       .status(400)
-      .json(`Error showing the event with ID: ${id}`, error);
+      .json({ message: `Error showing the event with ID: ${id}`, error });
   }
 };
 
@@ -45,10 +45,19 @@ const getEventByCategory = async (req, res, next) => {
 
 const createEvent = async (req, res, next) => {
   try {
-    const newEvent = new Event(req.body);
+    const { title, link, date, location, description, category } = req.body;
     const creator = req.user._id;
-    newEvent.createdBy = creator;
-    newEvent.validated = false;
+
+    const newEvent = new Event({
+      title,
+      link,
+      date,
+      location,
+      description,
+      category,
+      createdBy: creator,
+      validated: false
+    });
 
     if (req.file) {
       newEvent.img = req.file.path;
