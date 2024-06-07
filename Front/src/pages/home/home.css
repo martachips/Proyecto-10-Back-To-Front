@@ -20,13 +20,13 @@
 }
 
 .homepage-description {
-  width: 45svw;
+  /* width: 45svw; */
   margin: var(--rtc-margin-xl);
   border-radius: 10px;
   color: rgb(32, 32, 28);
   font-size: 3.2em;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
 }
 
 .homepage-buttons {
@@ -36,7 +36,7 @@
   height: 20svh;
   margin: 20px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 
 .home-button {
@@ -51,4 +51,10 @@
 
 .register-button {
   background-color: var(--rtc-color-4);
+}
+
+@media (max-width: 469px) {
+  .homepage-description {
+    font-size: 2.7em;
+  }
 }

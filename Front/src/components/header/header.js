@@ -6,11 +6,25 @@ import { logOut } from '../../pages/logIn/login';
 export const renderHeader = () => {
   const header = document.querySelector('.header');
   header.innerHTML = '';
-  const logoTitle = document.createElement('h1');
-  const navBar = document.createElement('nav');
 
-  logoTitle.textContent = ' --EventME-- ';
+  const logoTitle = document.createElement('h1');
+  logoTitle.textContent = ' EventME ';
   logoTitle.classList.add('logo');
+
+  const labelMenu = document.createElement('label');
+  labelMenu.id = 'menu-hamb-label';
+  labelMenu.htmlFor = 'menu-checkbox';
+
+  const menuCheckbox = document.createElement('input');
+  menuCheckbox.classList.add('menu-checkbox');
+  menuCheckbox.id = 'menu-checkbox';
+  menuCheckbox.type = 'checkbox';
+
+  const menuHamburguer = document.createElement('img');
+  menuHamburguer.classList.add('menu-hamb');
+  menuHamburguer.src = 'public/images/menu-svgrepo-com.svg';
+
+  const navBar = document.createElement('nav');
   navBar.classList.add('navBar');
 
   const userString = localStorage.getItem('user');
@@ -42,6 +56,7 @@ export const renderHeader = () => {
     link.addEventListener('click', route.page);
     navBar.append(link);
   }
-  header.append(logoTitle, navBar);
+  labelMenu.append(menuHamburguer);
+  header.append(logoTitle, menuCheckbox, labelMenu, navBar);
   home();
 };

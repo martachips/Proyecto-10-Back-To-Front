@@ -58,15 +58,8 @@ const createEventCard = (event, isAdmin) => {
   detailsDiv.innerHTML = `
     <p class="event-title info">${event.title}</p>
     <p class="event-location info">${event.location}</p>
-    <p class="event-category info">${event.category}</p>
+    <p class="event-category info">Estilo: ${event.category}</p>
   `;
-
-  if (isAdmin) {
-    detailsDiv.innerHTML += `<p class="validation info">${
-      event.validated ? 'Validado' : 'No validado'
-    }</p>
-    `;
-  }
 
   const showMoreBtn = document.createElement('button');
   showMoreBtn.classList.add('show-more-btn');
@@ -87,6 +80,15 @@ const createEventCard = (event, isAdmin) => {
 
     const validateBtn = createValidateBtn(event);
     eventCard.append(validateBtn);
+
+    const validationText = document.createElement('p');
+    validationText.classList.add('validation', 'info');
+    validationText.textContent = event.validated ? 'Validado' : 'No validado';
+    if (validationText.textContent === 'Validado') {
+      validationText.style.display = 'none';
+      validateBtn.style.display = 'none';
+    }
+    eventCard.append(validationText);
   }
 
   return eventCard;
@@ -157,7 +159,6 @@ const createValidateBtn = (event) => {
     try {
       await validateEvent(event._id);
       displaySuccessMessage('Evento validado con éxito');
-      eventPage();
     } catch (error) {
       console.error('Error al validar al evento', error);
       displayErrorMessage('Error al validar el evento');
